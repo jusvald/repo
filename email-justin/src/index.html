@@ -1,0 +1,10 @@
+<div>
+  <h1>Email Cliente</h1>
+  <div>
+    <input type="text" placeholder="Subject" [(ngModel)]="subject">
+    <textarea placeholder="Body" [(ngModel)]="body"></textarea>
+    <button (click)="sendMail()">Invia Mail</button>
+  </div>
+  <hr>
+  <app-sent-mail [mails]="sentMails"></app-sent-mail>
+</div>

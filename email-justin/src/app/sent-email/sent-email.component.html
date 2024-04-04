@@ -1,0 +1,4 @@
+<div *ngFor="let mail of mails; let i = index" class="mail-container" [class.special]="isExpanded(i)">
+    <div (click)="expandMail(i)" class="mail-header">{{ mail.subject }}</div>
+    <div *ngIf="isExpanded(i)" class="mail-body">{{ mail.body }}</div>
+  </div>

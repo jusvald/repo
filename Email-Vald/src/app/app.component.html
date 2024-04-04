@@ -1,0 +1,34 @@
+<div class="container-fluid p-5 bg-warning text-primary text-center">
+    <h1><b>Posta di justin</b></h1>
+  </div>
+  <div class="container mt-3">
+    <h3>Scrivi una mail:</h3>
+    <form (submit)="salvaEmail()" class="was-validated" style="max-width: 50%; margin-left: auto; margin-right: auto;">
+        <div class="mb-3 mt-3">
+            <label for="uname" class="form-label">Mittente:</label>
+            <input type="text" class="form-control" id="uname" placeholder="Mittente della mail" name="mittente" required [(ngModel)]="mittente">
+            <div class="valid-feedback">Valida</div>
+            <div class="invalid-feedback">Inserisci la mail del mittente.</div>
+        </div>
+        <div class="mb-3 mt-3">
+            <label for="subject" class="form-label">Oggetto:</label>
+            <input type="text" class="form-control" id="subject" placeholder="Oggetto della mail" name="oggetto" required [(ngModel)]="oggetto">
+            <div class="valid-feedback">Valido</div>
+            <div class="invalid-feedback">Inserisci l'oggetto.</div>
+        </div>
+        <div class="mb-3 mt-3">
+            <label for="message" class="form-label">Testo:</label>
+            <textarea class="form-control" id="message" placeholder="Testo della mail" name="testo" required [(ngModel)]="testo"></textarea>
+            <div class="valid-feedback">Valido</div>
+            <div class="invalid-feedback">Inserisci il testo.</div>
+        </div>
+        <div class="mb-3">
+            <label for="pwd" class="form-label">Destinatario:</label>
+            <input type="text" class="form-control" id="pwd" placeholder="Destinatario della mail" name="destinatario" required [(ngModel)]="destinatario">
+            <div class="valid-feedback">Valida</div>
+            <div class="invalid-feedback">Inserisci la mail del destinatario.</div>
+        </div>
+        <button type="submit" class="btn btn-primary">Salva e invia</button>
+    </form>
+  </div>
+  <app-sent-mail [emails]="emails"></app-sent-mail>

@@ -1,0 +1,23 @@
+<div class="container mt-3">
+    <h3>Posta:</h3>
+    <ul class="list-group">
+        <li *ngFor="let email of emails; let $index = index" class="list-group-item" [style.background-color]="email.evidenziato ? 'yellow' : 'white'">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <strong>{{ email.oggetto }} - <span style="color: rgba(212, 8, 8, 0);">{{ email.mittente }}</span></strong>
+                </div>
+                <div>
+                    <button class="btn btn-info" (click)="toggleEmail($index)">
+                        {{ email.espansa ? 'Chiudi' : 'Espandi' }}
+                    </button>
+                    <button *ngIf="email.espansa" class="btn btn-warning ms-2" (click)="evidenziaSpeciale($index)">Speciale</button>
+                </div>
+            </div>
+            <div *ngIf="email.espansa" class="mt-2">
+                <strong>Destinatario:</strong> {{ email.destinatario }}<br>
+                <strong>Testo:</strong> {{ email.testo }}
+            </div>
+        </li>
+    </ul>
+  </div>
+  <br>
