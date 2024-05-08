@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Client di posta</h1>
+  <div>
+    <label>Destinatario:</label>
+    <input type="text" [(ngModel)]="to" />
+  </div>
+  <div>
+    <label>Oggetto:</label>
+    <input type="text" [(ngModel)]="subject" />
+  </div>
+  <div>
+    <label>Testo:</label>
+    <textarea [(ngModel)]="text"></textarea>
+  </div>
+  <button (click)="sendMail()">Invia mail</button>
+
+  <app-sent-mail [sentMails]="sentMails"></app-sent-mail>
+</div>

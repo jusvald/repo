@@ -1,0 +1,15 @@
+<div class="sent-mails">
+    <h2>Mail inviate</h2>
+    <div *ngFor="let mail of sentMails" class="mail-item" [ngClass]="{ 'special': mail.special }">
+      <div>
+        <p>Destinatario: {{ mail.to }}</p>
+        <p>Oggetto: {{ mail.subject }}</p>
+        <button (click)="toggleExpanded(mail)"> {{ mail.expanded ? 'Chiudi' : 'Espandi' }} </button>
+        <button (click)="makeSpecial(mail)">Speciale</button>
+      </div>
+      <div *ngIf="mail.expanded">
+        <p>Testo: {{ mail.text }}</p>
+      </div>
+    </div>
+  </div>
+  
