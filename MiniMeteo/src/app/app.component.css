@@ -1,64 +1,103 @@
 *{
-    margin:0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body{
-    font-family: "Nunito",sans-serif;
-    background: #f8f8f8;
-  }
-  
-  .input{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+h1 {
+  font-family: "Abril Fatface", cursive;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #FFD700, #FF8C00);
+    animation: gradientAnimation 10s ease infinite alternate;
+}
+
+@keyframes gradientAnimation {    /* Animazione  */
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+
+.input {
     text-align: center;
-    margin: 100px auto;
-  }
-  
-  input[type="submit"]{
-    padding: 15px 30px;
-    background: #e7e7e7;
-    border: none;
-    border-radius: 1px;
-    font-family: "Nunito",sans-serif;
-    font-weight:bold;
-    font-size: 20px;
-  }
-  
-  .input input[type="text"]{
-    width: 600px;
-    height: 55px;
-    padding: 5px 10px;
-    background: #e7e7e7;
-    border: none;
-    border-radius: 1px;
-    font-family: "Nunito",sans-serif;
-    font-weight:bold;
-    font-size: 20px;
-  }
-  
-  .card{
-    width: 50%;
-    background: #e7e7e7;
-    height: 40vh;
     margin: 50px auto;
-    border-radius: 2px;
-  }
-  
-  
-  .close{
+    animation: fadeInDown 1s ease;
+}
+
+@keyframes fadeInDown {     /* Animazione  */
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+input[type="submit"] {
+  padding: 15px 40px;
+  background: linear-gradient(135deg, #FFD700, #FF8C00);
+  border: none;
+  border-radius: 50px;
+  font-family: "Fredoka One", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  color: #333; 
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background: linear-gradient(135deg, #FFD700, #FFA500); 
+}
+
+.input input[type="text"] {
+    width: 80%;
+    max-width: 600px;
+    height: 55px;
+    padding: 15px;
+    background: #FFDAB9;
+    border: none;
+    border-radius: 50px;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    color: #333;
+}
+
+
+.card {
+    width: 70%;
+    max-width: 800px;
+    background: #F0FFFF;
+    height: auto;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    animation: zoomIn 1s ease;
+}
+
+@keyframes zoomIn {         /* Animazione  */
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+.close {
     float: right;
-    margin-top: -2px;
+    margin-top: -10px;
     cursor: pointer;
-    margin-right: 20px;
-  }
-  
-  .card h1{
-    padding: 5px 0;
-    text-align: center;
-  }
-  
-  .card p{
-    text-align: center;
-    margin:40px 0;
-    font-size:20px;
-  }
+}
