@@ -9,12 +9,14 @@ import { NgModel } from '@angular/forms';
 export class AppComponent {
   title = 'minimeteo';
   nome: any;
+  paese: any;
   temp: any;
   clouds: any;
   desc: any;
   feelslike: any;
   apikey = '';
   loading = false;
+  icon: any;
 
   constructor() {}
 
@@ -65,54 +67,6 @@ export class AppComponent {
         return desc;
     }
 }
-getIcon(desc: string): string {
-  switch(desc) {
-    case 'clear sky':
-      return '<i class="fas fa-sun"></i>'; 
-    case 'few clouds':
-    case 'scattered clouds':
-    case 'broken clouds':
-    case 'overcast clouds':
-      return '<i class="fas fa-cloud"></i>'; 
-    case 'mist':
-    case 'smoke':
-    case 'haze':
-    case 'sand, dust whirls':
-    case 'fog':
-    case 'sand':
-    case 'dust':
-    case 'volcanic ash':
-    case 'squalls':
-    case 'tornado':
-      return '<i class="fas fa-smog"></i>'; 
-    case 'light rain':
-    case 'moderate rain':
-    case 'heavy intensity rain':
-    case 'very heavy rain':
-    case 'extreme rain':
-    case 'freezing rain':
-    case 'light intensity shower rain':
-    case 'shower rain':
-    case 'heavy intensity shower rain':
-    case 'ragged shower rain':
-      return '<i class="fas fa-cloud-showers-heavy"></i>'; 
-    case 'light snow':
-    case 'snow':
-    case 'heavy snow':
-    case 'sleet':
-    case 'shower sleet':
-    case 'light rain and snow':
-    case 'rain and snow':
-    case 'light shower snow':
-    case 'shower snow':
-    case 'heavy shower snow':
-      return '<i class="fas fa-snowflake"></i>'; 
-    default:
-      return ''; 
-  }
-}
-
-
 
   prendiMeteo(citta: any) {
     fetch('https://api.openweathermap.org/data/2.5/weather?q='+citta+'&appid='+this.apikey+'60c08cb918438e418245a6d4ba83d492')
@@ -121,11 +75,12 @@ getIcon(desc: string): string {
     
       this.temp = (data['main']['temp'] - 273.15).toFixed(1) + '°C';
       this.nome = data['name'];
+      this.paese = data['sys']['country'];
       this.desc = data['weather'][0]['description'];
       this.clouds = data['clouds']['all'] + '% ';
       this.feelslike = (data['main']['feels_like'] - 273.15).toFixed(1) + '°C';
-      
       this.loading = true;
+      this.icon =  "http://openweathermap.org/img/w/" +  data['weather'][0]['icon'] + ".png";
     });
 }}
 

@@ -23,15 +23,16 @@
     <div class="mt-5">
       <div class="card" id="weatherCard">
         <h1 class="card-title name" id="name">{{nome}}</h1>
+        <p class="card-text desc" *ngIf="loading"> <strong> Paese: </strong> {{paese}}</p>
         <p class="card-text temp"*ngIf="loading"><strong> Gradi:</strong>  {{temp}}</p>
         <p class="card-text feelslike"*ngIf="loading"><strong>Gradi Percepiti:</strong> {{feelslike}}</p>
         <p class="card-text clouds"*ngIf="loading"><strong>Percentuale Nuvolosa:</strong> {{clouds}}</p>
         <p class="card-text desc" *ngIf="loading"> <strong>Cielo:</strong> {{ traduciDesc(desc) }}</p> 
+        <div class="col-sm-4" *ngIf="loading">
+          <img src = {{icon}} style="height: 90px;">
+        </div>
+   
 
-        <p class="card-text desc" *ngIf="loading">
-          <strong>Cielo:</strong> {{ traduciDesc(desc) }}
-          <span [innerHTML]="getIcon(desc)"></span>
-      </p>
       
       </div>
     </div>

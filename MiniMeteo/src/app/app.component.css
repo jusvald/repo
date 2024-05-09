@@ -4,16 +4,17 @@
   box-sizing: border-box;
 }
 h1 {
-  font-family: "Abril Fatface", cursive;
+  font-family: Arial, sans-serif;
 }
 
 body {
     font-family: "Poppins", sans-serif;
-    background: linear-gradient(135deg, #FFD700, #FF8C00);
+    background: linear-gradient(135deg, #26acef, #0422a9);
     animation: gradientAnimation 10s ease infinite alternate;
+    
 }
 
-@keyframes gradientAnimation {    /* Animazione  */
+@keyframes gradientAnimation {   
     0% {
         background-position: 0% 50%;
     }
@@ -29,7 +30,7 @@ body {
     animation: fadeInDown 1s ease;
 }
 
-@keyframes fadeInDown {     /* Animazione  */
+@keyframes fadeInDown {     
     from {
         opacity: 0;
         transform: translateY(-20px);
@@ -84,7 +85,7 @@ input[type="submit"]:hover {
     animation: zoomIn 1s ease;
 }
 
-@keyframes zoomIn {         /* Animazione  */
+@keyframes zoomIn {        
     from {
         transform: scale(0.5);
         opacity: 0;
